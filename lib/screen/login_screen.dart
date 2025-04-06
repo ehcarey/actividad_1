@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:actividad_1/services/auth_service.dart';
-import 'car_list_screen.dart';
+
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -38,12 +39,13 @@ class _LoginScreenState extends State<LoginScreen> {
         SnackBar(content: Text('Bienvenido $username')),
       );
 
-      Navigator.pushReplacement(
-        context,
+     Navigator.pushReplacement(
+       context,
         MaterialPageRoute(
-          builder: (context) => CarListScreen(token: _authService.token!),
-        ),
-      );
+          builder: (context) => HomeScreen(token: _authService.token!),
+  ),
+);
+
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Usuario o contraseña incorrectos')),
