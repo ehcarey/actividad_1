@@ -1,15 +1,23 @@
   class Car {
-  final String id;
+  final String matricula;
   final String modelo;
   final String marca;
 
-  Car({required this.id, required this.modelo, required this.marca});
+  Car({required this.matricula, required this.modelo, required this.marca});
 
   factory Car.fromJson(Map<String, dynamic> json) {
     return Car(
-      id: json['id'],
+      matricula: json['matricula'],
       modelo: json['modelo'],
       marca: json['marca'],
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'matricula': matricula,
+      'modelo': modelo,
+      'marca': marca,
+    };
   }
 }

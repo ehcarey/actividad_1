@@ -4,7 +4,7 @@ import 'package:actividad_1/widgets/carros.dart';
 
 class CarCard extends StatelessWidget {
   final Car car;
-  CarCard({required this.car});
+  const CarCard({super.key, required this.car});
 
   @override
   Widget build(BuildContext context) {
